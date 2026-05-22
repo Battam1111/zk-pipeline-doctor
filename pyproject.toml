@@ -1,0 +1,23 @@
+[project]
+name = "zk-pipeline-doctor"
+version = "0.1.0"
+description = "Diagnose ZK circuit projects (Aleo/Noir/Compact/Cairo/risc0) for common health issues."
+authors = [{name = "Yanjun Chen"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["typer>=0.12.0", "rich>=13.0.0"]
+
+[project.scripts]
+zk-doctor = "zk_doctor.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/Battam1111/zk-pipeline-doctor"
+Cookbook = "https://battam1111.github.io/midnight-zk-cookbook/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zk_doctor"]

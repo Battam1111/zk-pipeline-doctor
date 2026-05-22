@@ -81,3 +81,12 @@ Sibling to the [ZK Cookbook](https://battam1111.github.io/midnight-zk-cookbook/)
 ## Contributing
 
 Bug reports and detector additions welcome. Each detector is a small Python module in `src/zk_doctor/detectors/` — add one for your favorite ZK ecosystem in ~50 LOC.
+
+
+## Sponsor
+
+Building diagnostics for one ZK ecosystem at a time. If `zk-doctor` saves you review time, consider sponsoring the project:
+
+- 🛠️ **[Pro License — $49](https://sandbox.polar.sh/checkout/polar_c_h8ZzuaM0cPfYxk8qbMTURYshs291a7KEa6kYd3U27hH)** — priority support, custom detector requests, recognition in this README.
+
+Sponsorships fund detector additions for new ZK ecosystems (Aztec, Starknet, Risc0 are next on the queue).

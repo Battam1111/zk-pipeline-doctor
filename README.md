@@ -87,6 +87,6 @@ Bug reports and detector additions welcome. Each detector is a small Python modu
 
 Building diagnostics for one ZK ecosystem at a time. If `zk-doctor` saves you review time, consider sponsoring the project:
 
-- 🛠️ **[Pro License — $49](https://sandbox.polar.sh/checkout/polar_c_h8ZzuaM0cPfYxk8qbMTURYshs291a7KEa6kYd3U27hH)** — priority support, custom detector requests, recognition in this README.
+- 🛠️ **[Pro License — $49](https://polar.sh/checkout/polar_c_aGRfgpddGyhB9LOTBSLvkBlsYJlMMo6M8muFX2rPXtk)** — priority support, custom detector requests, recognition in this README.
 
 Sponsorships fund detector additions for new ZK ecosystems (Aztec, Starknet, Risc0 are next on the queue).

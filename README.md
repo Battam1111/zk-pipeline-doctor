@@ -103,3 +103,16 @@ feed + paid tiers from [$19/mo](https://polar.sh/checkout/polar_c_BbZbN6eJnZ7rws
 ## Also from the same author
 
 - **[bounty-radar-mcp](https://github.com/Battam1111/bounty-radar-mcp)** — Open-source MCP server for the live Bounty Radar feed. Use from Claude Desktop / Cursor / Windsurf to search ZK + AI bounties.
+
+---
+
+<!-- related-projects:start -->
+
+## Related projects
+
+- [**zk-doctor-action**](https://github.com/Battam1111/zk-doctor-action) — GitHub Action wrapping this CLI — 5-min CI install
+- [**zk-doctor-bot**](https://github.com/Battam1111/zk-doctor-bot) — GitHub App: deeper, model-narrated PR reviews
+- [**midnight-zk-cookbook**](https://github.com/Battam1111/midnight-zk-cookbook) — ZK tutorials covering Compact / Leo / Noir / Cairo / Risc0
+- [**bounty-radar-data**](https://github.com/Battam1111/bounty-radar-data) — Live ZK bounty feed (JSON + RSS + HTML)
+
+<!-- related-projects:end -->

@@ -90,3 +90,11 @@ Building diagnostics for one ZK ecosystem at a time. If `zk-doctor` saves you re
 - 🛠️ **[Pro License — $49](https://polar.sh/checkout/polar_c_aGRfgpddGyhB9LOTBSLvkBlsYJlMMo6M8muFX2rPXtk)** — priority support, custom detector requests, recognition in this README.
 
 Sponsorships fund detector additions for new ZK ecosystems (Aztec, Starknet, Risc0 are next on the queue).
+
+
+## 📡 Sibling: Bounty Radar Pro
+
+[Bounty Radar Pro](https://battam1111.github.io/bounty-radar-data/) is the live
+bounty intelligence feed that pairs with this CLI. Use zk-doctor to harden your
+ZK project, use Radar to find the next ZK bounty worth shipping. Free public
+feed + paid tiers from [$19/mo](https://polar.sh/checkout/polar_c_BbZbN6eJnZ7rwsUfT1pMsj4lTftwnfMoGdWBo0KozKU).

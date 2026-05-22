@@ -1,118 +1,89 @@
 # zk-pipeline-doctor
 
-> Diagnose ZK circuit projects (Aleo, Noir, Compact, Cairo, Risc0) for common health issues.
+[![PyPI-soon](https://img.shields.io/badge/install-pip%20install%20git+...-blue?style=flat-square)](https://github.com/Battam1111/zk-pipeline-doctor)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-21%20passing-green?style=flat-square)](https://github.com/Battam1111/zk-pipeline-doctor/actions)
+[![GitHub Action](https://img.shields.io/badge/GitHub%20Action-zk--doctor--action%20v1.1.0-purple?style=flat-square)](https://github.com/Battam1111/zk-doctor-action)
+[![Cookbook](https://img.shields.io/badge/Cookbook-17%20tutorials-blueviolet?style=flat-square)](https://battam1111.github.io/midnight-zk-cookbook/)
 
-Born from authoring the [Midnight ZK Cookbook](https://battam1111.github.io/midnight-zk-cookbook/) and noticing 80% of ZK projects share the same gaps: stale toolchain, missing tests, no CI, hard-coded secrets, untested edge cases.
+**Multi-ecosystem ZK project health audit.** 8 detectors across Compact (Midnight), Leo (Aleo), Noir (Aztec), Cairo (Starknet + Cairo M), and 7 Rust-based zkVMs (risc0, SP1, Plonky3, Stwo, OpenVM, Nexus, Jolt). Plus Solidity ZK-verifier detection.
 
-`zk-doctor` walks a project directory and emits a markdown report scoring each dimension 1-10 plus concrete fixes.
+## What it scores
 
-## Install
+Six dimensions on a 0-10 scale; weighted overall:
 
-```bash
-pipx install zk-pipeline-doctor
-# or
-pip install --user zk-pipeline-doctor
-```
-
-## Use
-
-```bash
-# Diagnose the project in the current directory
-zk-doctor .
-
-# Or any path
-zk-doctor /path/to/midnight-project
-
-# JSON output for CI integration
-zk-doctor . --format json
-
-# Save report to a file
-zk-doctor . --output report.md
-
-# Exit nonzero if score < threshold (useful in CI)
-zk-doctor . --threshold 7
-```
-
-## Detected dimensions
-
-| Dimension | What we check |
+| Detector | What it checks |
 |---|---|
-| Language detection | Compact, Leo, Noir, Cairo, Rust+risc0 — auto-detected via file extensions and config files |
-| Toolchain freshness | `cargo`/`leo`/`nargo`/`compact-cli` version against published latest |
-| Test presence | Existence and roughly-counted size of `tests/`, `test/`, `*_test.*`, `*.spec.*` files |
-| CI configuration | `.github/workflows/*.yml`, presence of CI for tests, builds, releases |
-| Documentation | `README.md`, examples, inline comments density |
-| Security hygiene | Hard-coded private keys, `TODO` markers near critical paths, `.gitignore` coverage |
-| Reproducibility | Lockfiles present (`Cargo.lock`, `package-lock.json`, etc.); toolchain pins |
+| `language` | Detects which ZK language(s) + Rust zkVMs are present. Validates toolchain config. |
+| `tests` | Test files present, test:source ratio, framework conventions |
+| `ci` | `.github/workflows/`, matrix coverage, key signals |
+| `docs` | README sections, CONTRIBUTING, examples/, inline doc-comments |
+| `security` | Secrets in tree, sensitive-file patterns, dependency pinning |
+| `reproducibility` | Lockfiles, fixed toolchain versions, deterministic build hints |
 
-## Example output
+## Install + run
 
-```
-# zk-doctor report
+```bash
+# Install from GitHub (PyPI publication pending)
+pip install git+https://github.com/Battam1111/zk-pipeline-doctor.git@main
 
-Overall score: 6.2/10
+# Or with uv (recommended)
+uvx --from git+https://github.com/Battam1111/zk-pipeline-doctor.git zk-doctor /path/to/your/project
 
-| Dimension | Score | Notes |
-|---|---|---|
-| Language | 10/10 | Detected: Compact (12 files) |
-| Tests    | 4/10  | No tests/ directory; 0 *_test.* files |
-| CI       | 0/10  | No .github/workflows/ |
+# See pricing for paid offerings
+zk-doctor --upgrade-info
 ```
 
-## CI use
+Output is Markdown (default) or JSON (`--format json`); write to file with `--output report.md`. Fail CI below a score threshold with `--threshold 0.7`.
 
-`zk-doctor` exits with code 0 if overall score >= threshold, 1 otherwise:
+## Use it in GitHub Actions
 
 ```yaml
-- name: ZK health check
-  run: |
-    pipx install zk-pipeline-doctor
-    zk-doctor . --threshold 7
+- uses: Battam1111/zk-doctor-action@v1
+  with:
+    threshold: '0.7'
+    output: 'zk-doctor-report.md'
+    comment-on-pr: 'true'
+    comment-mode: 'diff'        # 'full' | 'diff' | 'none'
+    fail-on-regression: 'true'  # fail CI if PR drops score >0.1
 ```
 
-## License
+See [Battam1111/zk-doctor-action](https://github.com/Battam1111/zk-doctor-action).
 
-MIT — see `LICENSE`.
+## Tiered offerings
 
-## Related
+| Tier | What you get | Price |
+|---|---|---|
+| **Free CLI** (this repo) | Open-source CLI, all 8 detectors, run on your own machine, exit-code threshold gate. | $0, MIT |
+| **Free GitHub Action** ([zk-doctor-action](https://github.com/Battam1111/zk-doctor-action)) | Drop-in CI integration, PR comments, diff-aware mode. | $0, MIT |
+| **[ZK Cookbook Bundle](https://polar.sh/checkout/polar_c_6CqAq70gZIe8bmUOyrKMYQkLSYXS7t9aY3yxy4TFovi)** | 17 tutorials + companion code repos, offline-readable. | $15 once |
+| **[Cookbook + Pro License](https://polar.sh/checkout/polar_c_aGRfgpddGyhB9LOTBSLvkBlsYJlMMo6M8muFX2rPXtk)** | Bundle + priority detector update requests + private-fork support. | $49 once |
+| **[$99 Pre-Flight Audit](https://polar.sh/checkout/polar_c_gXO0FivhPZEULEbuWnpznkLPFdL2Koz68AvG93YoWFb)** | We run the CLI on your repo + add narrative review + Battam1111 personal review. Delivered in 24h as HTML/Markdown report. [See sample](https://battam1111.github.io/bounty-radar-data/audits/sample.html). **Pre-flight before a $10-50k human audit; NOT a substitute.** | $99 once |
+| **[Bounty Radar Hobbyist](https://polar.sh/checkout/polar_c_BbZbN6eJnZ7rwsUfT1pMsj4lTftwnfMoGdWBo0KozKU)** | Real-time push of new ZK bounties matching your filter (Telegram). | $19/mo |
+| **[Bounty Radar Pro](https://polar.sh/checkout/polar_c_CKKhyOq11BHuG2AulflWkm53YU98pLdrNo22h3OlB4O)** | All Hobbyist + multi-filter + HMAC webhook + weekly digest. | $97/mo |
+| **[Bounty Radar Team](https://polar.sh/checkout/polar_c_bT1FpxfzlShI3PcdHxTrHeJf8EVO1AFaWbFc90Z9mfC)** | All Pro + shared Slack/Discord + 5 seats + custom detectors. | $497/mo |
 
-Sibling to the [ZK Cookbook](https://battam1111.github.io/midnight-zk-cookbook/), a multi-ecosystem tutorial site covering Midnight, Aleo, Noir, and friends.
+All payments via [Polar.sh](https://polar.sh) (Merchant of Record). 14-day money-back guarantee.
 
-## Contributing
+## Embed the "Audited by zk-doctor" badge
 
-Bug reports and detector additions welcome. Each detector is a small Python module in `src/zk_doctor/detectors/` — add one for your favorite ZK ecosystem in ~50 LOC.
+Drop this in any ZK project README:
 
+```markdown
+[![Audited by zk-doctor](https://battam1111.github.io/bounty-radar-data/badges/audited.svg)](https://github.com/Battam1111/zk-pipeline-doctor)
+```
 
-## Sponsor
-
-Building diagnostics for one ZK ecosystem at a time. If `zk-doctor` saves you review time, consider sponsoring the project:
-
-- 🛠️ **[Pro License — $49](https://polar.sh/checkout/polar_c_aGRfgpddGyhB9LOTBSLvkBlsYJlMMo6M8muFX2rPXtk)** — priority support, custom detector requests, recognition in this README.
-
-Sponsorships fund detector additions for new ZK ecosystems (Aztec, Starknet, Risc0 are next on the queue).
-
-
-## 📡 Sibling: Bounty Radar Pro
-
-[Bounty Radar Pro](https://battam1111.github.io/bounty-radar-data/) is the live
-bounty intelligence feed that pairs with this CLI. Use zk-doctor to harden your
-ZK project, use Radar to find the next ZK bounty worth shipping. Free public
-feed + paid tiers from [$19/mo](https://polar.sh/checkout/polar_c_BbZbN6eJnZ7rwsUfT1pMsj4lTftwnfMoGdWBo0KozKU).
-
-
-## Also from the same author
-
-- **[bounty-radar-mcp](https://github.com/Battam1111/bounty-radar-mcp)** — Open-source MCP server for the live Bounty Radar feed. Use from Claude Desktop / Cursor / Windsurf to search ZK + AI bounties.
-
----
-
-<!-- related-projects:start -->
+For per-repo dynamic score badges (shields.io endpoint), see [badges/README.md](https://github.com/Battam1111/bounty-radar-data/tree/main/badges).
 
 ## Related projects
 
-- [**zk-doctor-action**](https://github.com/Battam1111/zk-doctor-action) — GitHub Action wrapping this CLI — 5-min CI install
-- [**zk-doctor-bot**](https://github.com/Battam1111/zk-doctor-bot) — GitHub App: deeper, model-narrated PR reviews
-- [**midnight-zk-cookbook**](https://github.com/Battam1111/midnight-zk-cookbook) — currently in rollback; see DISCLOSURE there
-- [**bounty-radar-data**](https://github.com/Battam1111/bounty-radar-data) — Live ZK bounty feed (JSON + RSS + HTML)
-
+<!-- related-projects:start -->
+- [**zk-doctor-action**](https://github.com/Battam1111/zk-doctor-action) — GitHub Action wrapping this CLI; diff-aware PR comments
+- [**bounty-radar-data**](https://battam1111.github.io/bounty-radar-data/) — Live ZK bounty feed
+- [**bounty-radar-mcp**](https://github.com/Battam1111/bounty-radar-mcp) — MCP server for the bounty feed
+- [**midnight-zk-cookbook**](https://battam1111.github.io/midnight-zk-cookbook/) — 17 ZK tutorials across 5 ecosystems
 <!-- related-projects:end -->
+
+## License
+
+MIT

@@ -98,3 +98,8 @@ Sponsorships fund detector additions for new ZK ecosystems (Aztec, Starknet, Ris
 bounty intelligence feed that pairs with this CLI. Use zk-doctor to harden your
 ZK project, use Radar to find the next ZK bounty worth shipping. Free public
 feed + paid tiers from [$19/mo](https://polar.sh/checkout/polar_c_BbZbN6eJnZ7rwsUfT1pMsj4lTftwnfMoGdWBo0KozKU).
+
+
+## Also from the same author
+
+- **[bounty-radar-mcp](https://github.com/Battam1111/bounty-radar-mcp)** — Open-source MCP server for the live Bounty Radar feed. Use from Claude Desktop / Cursor / Windsurf to search ZK + AI bounties.

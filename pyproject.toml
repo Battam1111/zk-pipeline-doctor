@@ -1,6 +1,6 @@
 [project]
 name = "zk-pipeline-doctor"
-version = "0.2.2"
+version = "0.2.3"
 description = "Diagnose ZK circuit projects (Aleo/Noir/Compact/Cairo/risc0/SP1/Plonky3/Stwo/Solidity-verifier) for common health issues."
 authors = [{name = "Yanjun Chen"}]
 license = "MIT"

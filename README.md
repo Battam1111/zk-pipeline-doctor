@@ -43,10 +43,10 @@ Output is Markdown (default) or JSON (`--format json`); write to file with `--ou
 
 The Pro tier (`$15/mo` per developer; activates on up to 5 machines per key) unlocks four deep cross-ecosystem detectors that demand multi-file analysis and ecosystem-specific knowledge:
 
-- **`circuit_complexity`** — estimate circuit size across Plonky3 AIRs, SP1 program syscall counts, Compact circuit counts, Noir assert/loop hints, and Cairo function counts
-- **`proving_system_pitfalls`** — soundness footguns by ecosystem: risc0 dev-mode leak, SP1 missing accelerated patches, Plonky3 default field/PCS, Stwo default proof config, Noir/Compact toolchain pin drift
-- **`verifier_soundness`** — Solidity ZK-verifier audit checklist: `delegatecall` presence, scalar-field bounds on public inputs, G1/G2 zero-point checks, pairing-precompile gas griefing
-- **`multi_file_consistency`** — proving-system version pinned consistently across `Cargo.toml`/README/CI; dev-vs-prod feature flag drift; circuit signature vs verifier arity drift; `Cargo.lock` dialect consistency
+- **`circuit_complexity`**: estimate circuit size across Plonky3 AIRs, SP1 program syscall counts, Compact circuit counts, Noir assert/loop hints, and Cairo function counts
+- **`proving_system_pitfalls`**: soundness footguns by ecosystem: risc0 dev-mode leak, SP1 missing accelerated patches, Plonky3 default field/PCS, Stwo default proof config, Noir/Compact toolchain pin drift
+- **`verifier_soundness`**: Solidity ZK-verifier audit checklist: `delegatecall` presence, scalar-field bounds on public inputs, G1/G2 zero-point checks, pairing-precompile gas griefing
+- **`multi_file_consistency`**: proving-system version pinned consistently across `Cargo.toml`/README/CI; dev-vs-prod feature flag drift; circuit signature vs verifier arity drift; `Cargo.lock` dialect consistency
 
 ```bash
 # After purchase, activate once per machine:
@@ -55,7 +55,7 @@ zk-doctor license-status   # confirms tier == pro
 zk-doctor /path/to/project # now runs all 10 detectors
 ```
 
-The free tier still does everything it did in v0.2.x — the Pro detectors are additions, not replacements. Buy at https://buy.polar.sh/polar_cl_qmTOsuYZ6CHZJlElzrYGfnf3iXHfJfmwt5add3qGeD0 (link goes live once the product is published; see [POLAR_PRODUCT_TODO.md](./POLAR_PRODUCT_TODO.md) for status).
+The free tier still does everything it did in v0.2.x, the Pro detectors are additions, not replacements. Buy at https://buy.polar.sh/polar_cl_qmTOsuYZ6CHZJlElzrYGfnf3iXHfJfmwt5add3qGeD0 (Polar handles billing as Merchant of Record; VAT and US sales tax included; 30-day refund policy).
 
 > Implementation drafted with AI assistance and reviewed before each release.
 
@@ -87,7 +87,7 @@ See [Battam1111/zk-doctor-action](https://github.com/Battam1111/zk-doctor-action
 | **[Bounty Radar Pro](https://polar.sh/checkout/polar_c_CKKhyOq11BHuG2AulflWkm53YU98pLdrNo22h3OlB4O)** | All Hobbyist + multi-filter + HMAC webhook + weekly digest. | $97/mo |
 | **[Bounty Radar Team](https://polar.sh/checkout/polar_c_bT1FpxfzlShI3PcdHxTrHeJf8EVO1AFaWbFc90Z9mfC)** | All Pro + shared Slack/Discord + 5 seats + custom detectors. | $497/mo |
 
-All payments via [Polar.sh](https://polar.sh) (Merchant of Record). 14-day money-back guarantee.
+All payments via [Polar.sh](https://polar.sh) (Merchant of Record). 30-day money-back guarantee.
 
 ## Embed the "Audited by zk-doctor" badge
 

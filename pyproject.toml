@@ -1,7 +1,7 @@
 [project]
 name = "zk-pipeline-doctor"
-version = "0.2.3"
-description = "Diagnose ZK circuit projects (Aleo/Noir/Compact/Cairo/risc0/SP1/Plonky3/Stwo/Solidity-verifier) for common health issues."
+version = "0.3.0"
+description = "Diagnose ZK circuit projects (Aleo/Noir/Compact/Cairo/risc0/SP1/Plonky3/Stwo/Solidity-verifier) for common health issues. Free tier + Pro tier with deep cross-ecosystem detectors."
 authors = [{name = "Yanjun Chen"}]
 license = "MIT"
 readme = "README.md"
@@ -14,6 +14,7 @@ zk-doctor = "zk_doctor.cli:app"
 [project.urls]
 Homepage = "https://github.com/Battam1111/zk-pipeline-doctor"
 Cookbook = "https://battam1111.github.io/midnight-zk-cookbook/"
+Pro = "https://polar.sh/Battam1111/zk-doctor-pro"
 
 [build-system]
 requires = ["hatchling"]

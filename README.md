@@ -55,7 +55,7 @@ zk-doctor license-status   # confirms tier == pro
 zk-doctor /path/to/project # now runs all 10 detectors
 ```
 
-The free tier still does everything it did in v0.2.x — the Pro detectors are additions, not replacements. Buy at https://polar.sh/Battam1111/zk-doctor-pro (link goes live once the product is published; see [POLAR_PRODUCT_TODO.md](./POLAR_PRODUCT_TODO.md) for status).
+The free tier still does everything it did in v0.2.x — the Pro detectors are additions, not replacements. Buy at https://buy.polar.sh/polar_cl_qmTOsuYZ6CHZJlElzrYGfnf3iXHfJfmwt5add3qGeD0 (link goes live once the product is published; see [POLAR_PRODUCT_TODO.md](./POLAR_PRODUCT_TODO.md) for status).
 
 > Implementation drafted with AI assistance and reviewed before each release.
 

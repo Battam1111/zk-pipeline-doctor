@@ -78,10 +78,10 @@ For per-repo dynamic score badges (shields.io endpoint), see [badges/README.md](
 ## Related projects
 
 <!-- related-projects:start -->
-- [**zk-doctor-action**](https://github.com/Battam1111/zk-doctor-action) — GitHub Action wrapping this CLI; diff-aware PR comments
-- [**bounty-radar-data**](https://battam1111.github.io/bounty-radar-data/) — Live ZK bounty feed
-- [**bounty-radar-mcp**](https://github.com/Battam1111/bounty-radar-mcp) — MCP server for the bounty feed
-- [**midnight-zk-cookbook**](https://battam1111.github.io/midnight-zk-cookbook/) — 17 ZK tutorials across 5 ecosystems
+- [**zk-doctor-action**](https://github.com/Battam1111/zk-doctor-action); GitHub Action wrapping this CLI; diff-aware PR comments
+- [**bounty-radar-data**](https://battam1111.github.io/bounty-radar-data/); Live ZK bounty feed
+- [**bounty-radar-mcp**](https://github.com/Battam1111/bounty-radar-mcp); MCP server for the bounty feed
+- [**midnight-zk-cookbook**](https://battam1111.github.io/midnight-zk-cookbook/); 17 ZK tutorials across 5 ecosystems
 <!-- related-projects:end -->
 
 ## License

@@ -99,6 +99,31 @@ Drop this in any ZK project README:
 
 For per-repo dynamic score badges (shields.io endpoint), see [badges/README.md](https://github.com/Battam1111/bounty-radar-data/tree/main/badges).
 
+## ZK ecosystem learning resources
+
+zk-doctor scores your project; the [Midnight ZK Cookbook](https://battam1111.github.io/midnight-zk-cookbook/) teaches you how to write code that scores well. 17 EN + 4 CN tutorials with verified syntax across 5 ecosystems. Recommended starting points:
+
+- [Compact vs Leo vs Noir vs Cairo](https://battam1111.github.io/midnight-zk-cookbook/tutorials/zk-language-comparison.html); pick the right ZK language for your problem
+- [Compact contracts with Map and Merkle](https://battam1111.github.io/midnight-zk-cookbook/tutorials/289.html); Midnight's most common state pattern
+- [Noir circuit basics](https://battam1111.github.io/midnight-zk-cookbook/tutorials/noir-circuit-basics.html); from zero to a working circuit with test suite
+- [Risc0 zkVM in Rust](https://battam1111.github.io/midnight-zk-cookbook/tutorials/risc0-zkvm-rust.html); prove existing Rust execution without rewriting as a circuit
+- [zk-doctor GitHub Action](https://battam1111.github.io/midnight-zk-cookbook/tutorials/zk-doctor-github-action.html); add automated ZK quality checks to any PR
+
+Full index: <https://battam1111.github.io/midnight-zk-cookbook/>
+
+## Get paid for ZK work
+
+Once you can pass `zk-doctor` on your own repos, claiming public bounties is the natural next step. [Bounty Radar](https://battam1111.github.io/bounty-radar-data/) is a live, free feed aggregating open ZK bounties from Algora, GitHub labels, Drips Wave, Code4rena, and Bountycaster. Per-ecosystem widgets and JSON sub-feeds:
+
+- Midnight: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=midnight) · [JSON](https://battam1111.github.io/bounty-radar-data/midnight.json)
+- Noir: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=noir) · [JSON](https://battam1111.github.io/bounty-radar-data/noir.json)
+- Aleo: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=aleo) · [JSON](https://battam1111.github.io/bounty-radar-data/aleo.json)
+- Aztec: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=aztec) · [JSON](https://battam1111.github.io/bounty-radar-data/aztec.json)
+- Cairo / Starknet: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=cairo) · [JSON](https://battam1111.github.io/bounty-radar-data/cairo.json)
+- risc0 / SP1 / Plonky3: [widget](https://battam1111.github.io/bounty-radar-data/widget.html?ecosystem=risc0) · [JSON](https://battam1111.github.io/bounty-radar-data/risc0.json)
+
+Free tier is poll-based. Real-time Telegram push starts at $19/mo; see [pricing on the radar landing](https://battam1111.github.io/bounty-radar-data/#pricing--why-pay-if-the-feed-is-free).
+
 ## Related projects
 
 <!-- related-projects:start -->
